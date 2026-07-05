@@ -17,11 +17,20 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('#about')
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState(() => {
+    if (typeof document === 'undefined') return 'dark'
+    if (document.documentElement.classList.contains('light')) return 'light'
+    if (document.documentElement.classList.contains('dark')) return 'dark'
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  })
 
   useEffect(() => {
-    const currentTheme = document.documentElement.classList.contains('light') ? 'light' : 'dark'
-    setTheme(currentTheme)
+    // Keep state in sync if the class is changed elsewhere (e.g. App.jsx init).
+    const sync = () => {
+      const t = document.documentElement.classList.contains('light') ? 'light' : 'dark'
+      setTheme((prev) => (prev === t ? prev : t))
+    }
+    sync()
 
     const onScroll = () => {
       setScrolled(window.scrollY > 16)

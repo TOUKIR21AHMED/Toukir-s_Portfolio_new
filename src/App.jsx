@@ -1,7 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Footer from './components/Footer.jsx'
 import Navbar from './components/Navbar.jsx'
+import Preloader from './components/Preloader.jsx'
 import About from './components/sections/About.jsx'
 import Achievements from './components/sections/Achievements.jsx'
 import Contact from './components/sections/Contact.jsx'
@@ -19,6 +20,8 @@ const DESCRIPTION =
   'Portfolio of Md. Toukir Ahmed — MERN Stack Developer, Hackathon Champion, and researcher in AI, Computer Vision and Machine Learning.'
 
 export default function App() {
+  const [ready, setReady] = useState(false)
+
   useEffect(() => {
     document.title = TITLE
     const stored = window.localStorage.getItem('theme')
@@ -46,6 +49,8 @@ export default function App() {
       >
         Skip to content
       </a>
+
+      {!ready && <Preloader onDone={() => setReady(true)} />}
 
       <BackgroundFX />
 
