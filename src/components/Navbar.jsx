@@ -19,9 +19,10 @@ export default function Navbar() {
   const [active, setActive] = useState('#about')
   const [theme, setTheme] = useState(() => {
     if (typeof document === 'undefined') return 'dark'
+    // Site default is DARK, regardless of OS preference.
     if (document.documentElement.classList.contains('light')) return 'light'
     if (document.documentElement.classList.contains('dark')) return 'dark'
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+    return 'dark'
   })
 
   useEffect(() => {

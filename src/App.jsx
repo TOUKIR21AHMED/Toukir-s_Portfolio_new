@@ -25,8 +25,8 @@ export default function App() {
   useEffect(() => {
     document.title = TITLE
     const stored = window.localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const theme = stored ?? (prefersDark ? 'dark' : 'light')
+    // Site default is DARK, regardless of OS preference.
+    const theme = stored ?? 'dark'
     document.documentElement.classList.toggle('light', theme === 'light')
     document.documentElement.classList.toggle('dark', theme === 'dark')
     document.documentElement.style.colorScheme = theme
