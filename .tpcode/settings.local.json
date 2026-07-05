@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "defaultMode": "bypassPermissions"
+  },
+  "providerPool": [
+    "provider_ef19bc2c42e0",
+    "provider_fa90fc87540b",
+    "provider_9095edebac58",
+    "provider_71e9765b88aa",
+    "provider_d1d1bf8fdeaa",
+    "provider_f3e43c9fc3e7",
+    "provider_ae3fe3263b78",
+    "provider_3f11b354ba12"
+  ],
+  "providerRotationMode": "off",
+  "providerRotationList": [],
+  "providerRotationCount": 0,
+  "activeProviderProfileId": "provider_d6cb64d9b214",
+  "providerShuffleList": [
+    "provider_ef19bc2c42e0"
+  ]
+}
