@@ -371,9 +371,8 @@ export default function Hero() {
               Get in Touch
             </a>
             <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/Toukir's_CV.pdf"
+              download="Toukir_Ahmed_CV.pdf"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -396,7 +395,7 @@ export default function Hero() {
                 e.currentTarget.style.color = mutedText
               }}
             >
-              <Download size={16} /> Resume
+              <Download size={16} /> Download CV
             </a>
           </motion.div>
 
