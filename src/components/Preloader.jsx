@@ -1,30 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
-const RING_FILL_MS = 2200
-
-// Critical assets we want warm before revealing the site. These run in
-// parallel with the ring fill — the ring just gives a visual minimum.
-const CRITICAL_ASSETS = [
-  '/hero.png',
-  '/fabroms.png',
-  '/roamadtravels.png',
-  '/aurmita.png',
-  '/pdc.png',
-  '/openGl.png',
-  '/cseclub.jpg',
-  '/csecricket.jpg',
-  '/greaterMym.jpg',
-]
-
-function preloadImage(src) {
-  return new Promise((resolve) => {
-    const img = new Image()
-    img.onload = () => resolve(src)
-    img.onerror = () => resolve(src) // never hang the site on a 404
-    img.decoding = 'async'
-    img.src = src
-  })
-}
+const RING_FILL_MS = 900
+// Hard cap so the preloader never sits on screen longer than this, even if
+// assets are still loading. The site reveals as soon as it's actually ready
+// (or when this cap is hit — whichever comes first).
+const MAX_PRELOAD_MS = 1500
 
 export default function Preloader({ onDone }) {
   const [exiting, setExiting] = useState(false)
@@ -40,10 +20,11 @@ export default function Preloader({ onDone }) {
       setExiting(true)
       window.setTimeout(() => {
         if (mounted) onDone?.()
-      }, 650)
+      }, 350)
     }
 
-    const startedAt = performance.now()
+    // Hard cap so the preloader never sits on screen longer than this.
+    const hardCap = window.setTimeout(finish, MAX_PRELOAD_MS)
 
     // One-shot ring fill promise — the site opens when the ring is full.
     const ringFill = new Promise((resolve) => {
@@ -53,7 +34,7 @@ export default function Preloader({ onDone }) {
       el.addEventListener('animationend', done, { once: true })
       // Safety net: if the animation never fires (e.g. reduced motion), resolve
       // after RING_FILL_MS anyway.
-      window.setTimeout(done, RING_FILL_MS + 250)
+      window.setTimeout(done, RING_FILL_MS + 150)
     })
 
     const tasks = [
@@ -62,7 +43,6 @@ export default function Preloader({ onDone }) {
         ? document.fonts.ready
         : Promise.resolve()
       ).catch(() => {}),
-      Promise.all(CRITICAL_ASSETS.map(preloadImage)).catch(() => {}),
       new Promise((resolve) => {
         if (document.readyState === 'complete') resolve()
         else
@@ -75,15 +55,14 @@ export default function Preloader({ onDone }) {
 
     Promise.all(tasks).then(() => {
       if (!mounted) return
-      // If critical assets / fonts are still loading, hold the preloader
-      // a touch longer so the site doesn't reveal with empty images.
-      const elapsed = performance.now() - startedAt
-      const pad = Math.max(0, RING_FILL_MS - elapsed)
-      window.setTimeout(finish, pad)
+      window.clearTimeout(hardCap)
+      // Reveal as soon as everything is ready — no extra padding.
+      finish()
     })
 
     return () => {
       mounted = false
+      window.clearTimeout(hardCap)
     }
   }, [onDone])
 
@@ -95,7 +74,7 @@ export default function Preloader({ onDone }) {
       className={[
         'fixed inset-0 z-[9999] flex items-center justify-center',
         'bg-black select-none',
-        'transition-opacity duration-[650ms] ease-out',
+        'transition-opacity duration-[350ms] ease-out',
         exiting ? 'opacity-0 pointer-events-none' : 'opacity-100',
       ].join(' ')}
       style={{ WebkitTapHighlightColor: 'transparent' }}

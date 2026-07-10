@@ -18,11 +18,11 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState('#about')
   const [theme, setTheme] = useState(() => {
-    if (typeof document === 'undefined') return 'dark'
-    // Site default is DARK, regardless of OS preference.
+    if (typeof document === 'undefined') return 'light'
+    // Site default is LIGHT, regardless of OS preference.
     if (document.documentElement.classList.contains('light')) return 'light'
     if (document.documentElement.classList.contains('dark')) return 'dark'
-    return 'dark'
+    return 'light'
   })
 
   useEffect(() => {
