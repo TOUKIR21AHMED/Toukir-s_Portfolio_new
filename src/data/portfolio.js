@@ -24,7 +24,7 @@ import {
 export const SITE = {
   name: 'Md. Toukir Ahmed',
   shortName: 'Toukir Ahmed',
-  title: 'MERN Stack Developer · AI & Computer Vision Researcher',
+  title: 'MERN Stack Developer · NestJS & PostgreSQL Learner',
   email: 'ahmed18@cse.pstu.ac.bd',
   location: 'Patuakhali, Bangladesh',
   university: 'Patuakhali Science and Technology University (PSTU)',
@@ -39,6 +39,70 @@ export const ROLES = [
   'AI Agent Builder',
 ]
 
+export const SKILL_CATEGORIES = [
+  {
+    key: 'frontend',
+    title: 'Frontend',
+    accent: 'from-cyan-400 to-sky-500',
+    items: [
+      { name: 'React', icon: Code2, level: 92, color: 'from-cyan-400 to-sky-500' },
+      { name: 'Next.js', icon: Code2, level: 84, color: 'from-slate-500 to-slate-800' },
+      { name: 'JavaScript', icon: Code2, level: 92, color: 'from-amber-400 to-yellow-500' },
+      { name: 'TypeScript', icon: Code2, level: 80, color: 'from-sky-500 to-blue-600' },
+      { name: 'HTML', icon: Code2, level: 95, color: 'from-orange-400 to-red-500' },
+      { name: 'CSS', icon: Palette, level: 92, color: 'from-blue-400 to-indigo-500' },
+      { name: 'Tailwind CSS', icon: Palette, level: 95, color: 'from-cyan-400 to-sky-500' },
+      { name: 'Bootstrap', icon: Palette, level: 82, color: 'from-violet-500 to-purple-700' },
+    ],
+  },
+  {
+    key: 'backend',
+    title: 'Backend',
+    accent: 'from-emerald-400 to-green-600',
+    items: [
+      { name: 'Node.js', icon: Server, level: 88, color: 'from-emerald-400 to-green-600' },
+      { name: 'Express.js', icon: Boxes, level: 86, color: 'from-slate-300 to-slate-500' },
+      { name: 'NestJS', icon: Server, level: 70, color: 'from-rose-500 to-red-700' },
+      { name: 'REST API', icon: Workflow, level: 88, color: 'from-amber-400 to-orange-600' },
+      { name: 'JWT Authentication', icon: Workflow, level: 84, color: 'from-pink-400 to-rose-600' },
+    ],
+  },
+  {
+    key: 'database',
+    title: 'Database',
+    accent: 'from-emerald-500 to-emerald-700',
+    items: [
+      { name: 'MongoDB', icon: Database, level: 85, color: 'from-emerald-500 to-emerald-700' },
+      { name: 'PostgreSQL', icon: Database, level: 72, color: 'from-sky-500 to-indigo-700' },
+      { name: 'Prisma ORM', icon: Database, level: 70, color: 'from-fuchsia-500 to-purple-700' },
+      { name: 'Mongoose', icon: Database, level: 85, color: 'from-green-500 to-emerald-700' },
+    ],
+  },
+  {
+    key: 'tools',
+    title: 'Tools',
+    accent: 'from-slate-400 to-slate-600',
+    items: [
+      { name: 'Git', icon: Github, level: 90, color: 'from-orange-500 to-red-600' },
+      { name: 'GitHub', icon: Github, level: 90, color: 'from-slate-500 to-slate-800' },
+      { name: 'Postman', icon: Workflow, level: 88, color: 'from-orange-400 to-orange-600' },
+      { name: 'VS Code', icon: Wrench, level: 95, color: 'from-sky-500 to-blue-700' },
+      { name: 'Vercel', icon: Server, level: 84, color: 'from-slate-700 to-black' },
+      { name: 'Render', icon: Server, level: 80, color: 'from-emerald-500 to-teal-700' },
+    ],
+  },
+]
+
+export const LEARNING_SKILLS = [
+  { name: 'Redis', icon: Database, level: 80, color: 'from-rose-500 to-red-700' },
+  { name: 'BullMQ', icon: Workflow, level: 75, color: 'from-orange-500 to-amber-600' },
+  { name: 'Docker', icon: Boxes, level: 82, color: 'from-sky-500 to-blue-700' },
+  { name: 'WebSockets', icon: Workflow, level: 77, color: 'from-violet-500 to-fuchsia-600' },
+  { name: 'Scalable Backend Architecture', icon: Cpu, level: 89, color: 'from-amber-500 to-orange-600' },
+]
+
+// Legacy export kept so the existing single-list Skills section can still be
+// used if a consumer imports it. Not displayed in the redesigned section.
 export const SKILLS = [
   { name: 'React', icon: Code2, level: 92, color: 'from-cyan-400 to-sky-500' },
   { name: 'Node.js', icon: Server, level: 88, color: 'from-emerald-400 to-green-600' },
@@ -47,6 +111,9 @@ export const SKILLS = [
   { name: 'Tailwind CSS', icon: Palette, level: 95, color: 'from-cyan-400 to-sky-500' },
   { name: 'JavaScript', icon: Code2, level: 92, color: 'from-amber-400 to-yellow-500' },
   { name: 'Git & GitHub', icon: Github, level: 90, color: 'from-slate-400 to-slate-600' },
+  { name: 'NestJS', icon: Server, level: 70, color: 'from-rose-500 to-red-700' },
+  { name: 'PostgreSQL', icon: Database, level: 72, color: 'from-sky-500 to-indigo-700' },
+  { name: 'Prisma ORM', icon: Database, level: 70, color: 'from-fuchsia-500 to-purple-700' },
   { name: 'Artificial Intelligence', icon: Brain, level: 80, color: 'from-violet-400 to-fuchsia-600' },
   { name: 'Computer Vision', icon: Eye, level: 78, color: 'from-purple-400 to-indigo-600' },
   { name: 'Machine Learning', icon: Cpu, level: 76, color: 'from-rose-400 to-pink-600' },
@@ -120,6 +187,27 @@ export const ACHIEVEMENTS = [
 
 export const PROJECTS = [
   {
+    name: 'Real-Time Bus Tracking System',
+    tagline: 'NestJS · PostgreSQL · Prisma',
+    description:
+      'A scalable backend-focused university bus tracking system built with NestJS and PostgreSQL — buses continuously update their location and students can view the latest position in real time.',
+    stack: ['NestJS', 'PostgreSQL', 'Prisma ORM', 'REST API', 'DTO Validation'],
+    image: '/Bus_tracking.png',
+    link: 'https://github.com/TOUKIR21AHMED/BUS_TRACKING_WEBAPP',
+    status: 'Currently under active development.',
+    highlights: [
+      'NestJS Modular Architecture',
+      'Prisma ORM with PostgreSQL',
+      'REST APIs with DTO validation',
+      'Dependency Injection across modules',
+      'Route & Bus Management',
+      'Tracking History endpoints',
+      'Clean, scalable backend architecture',
+    ],
+    color: 'from-rose-500 to-red-700',
+    featured: true,
+  },
+  {
     name: 'FABROMS',
     tagline: 'MERN Stack E-commerce Platform',
     description:
@@ -156,6 +244,7 @@ export const PROJECTS = [
       'A premium ayurvedic medicine e-commerce platform — a curated shop for ayurvedic products paired with a free bilingual (Bangla & English) blog. Built with Next.js and Firebase for fast, SEO-friendly, server-rendered pages and a smooth shopping experience.',
     stack: ['Next.js', 'Firebase', 'Tailwind CSS', 'Stripe'],
     image: '/aurmita.png',
+    link: 'https://aurmita.com/',
     highlights: [
       'Curated ayurvedic medicine store with cart & checkout',
       'Free bilingual blog (Bangla & English) for content marketing',
@@ -259,6 +348,18 @@ export const LEADERSHIP = [
     image: '/csecricket.jpg',
   },
 ]
+
+export const EXPLORING = [
+  { name: 'OpenClaw', icon: Workflow, color: 'from-violet-500 to-fuchsia-600' },
+  { name: 'AI Automation', icon: Brain, color: 'from-pink-500 to-rose-600' },
+  { name: 'n8n', icon: Workflow, color: 'from-orange-500 to-rose-600' },
+  { name: 'BullMQ', icon: Workflow, color: 'from-orange-500 to-amber-600' },
+  { name: 'Apache Kafka', icon: Workflow, color: 'from-slate-500 to-slate-800' },
+  { name: 'Workflow Orchestration', icon: Workflow, color: 'from-emerald-500 to-teal-600' },
+]
+
+export const EXPLORING_INTRO =
+  'Continuously expanding my backend engineering skills by building production-style applications and learning scalable software architecture.'
 
 export const SOCIALS = [
   { name: 'GitHub', href: 'https://github.com/toukirahmed', icon: 'github' },

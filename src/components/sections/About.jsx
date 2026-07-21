@@ -13,8 +13,8 @@ export default function About() {
     <SectionWrapper
       id="about"
       eyebrow="About Me"
-      title="A developer with a researcher's mindset."
-      description="I bridge full-stack engineering and applied research — shipping polished products while exploring the frontiers of AI."
+      title="A MERN specialist growing into modern backend engineering."
+      description="I ship premium full-stack products with the MERN stack and am intentionally expanding into NestJS, PostgreSQL and scalable backend architecture — through real projects, not just tutorials."
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         <motion.div
@@ -29,22 +29,34 @@ export default function About() {
               I'm <span className="text-white font-semibold">Md. Toukir Ahmed</span>, a Computer
               Science student at{' '}
               <span className="text-white">Patuakhali Science and Technology University</span>{' '}
-              — passionate about building premium web experiences and conducting research at the
-              intersection of AI, computer vision and machine learning.
+              specializing in the <span className="text-white">MERN stack</span> — building
+              production-grade web applications with React, Node.js, Express and MongoDB.
             </p>
             <p>
-              As a MERN stack developer I design and ship end-to-end products using React,
-              Node.js, Express and MongoDB, paired with Tailwind CSS for beautiful, responsive
-              UIs. My research explores deep learning for medical imaging, computer vision and
-              simulation through OpenGL.
+              I'm currently focused on <span className="text-white">advanced backend engineering</span>{' '}
+              and growing hands-on experience with <span className="text-white">NestJS</span>,{' '}
+              <span className="text-white">PostgreSQL</span> and{' '}
+              <span className="text-white">Prisma ORM</span>. I'm building a real-world{' '}
+              <span className="text-white">Bus Tracking System</span> as a university project — a
+              scalable backend where buses continuously push location updates and students can view
+              the latest position in real time.
             </p>
             <p>
-              Beyond web development, I'm an{' '}
-              <span className="text-white">AI automation builder</span> — designing end-to-end
+              Through that project I've been working directly with{' '}
+              <span className="text-white">NestJS modular architecture</span>,{' '}
+              <span className="text-white">dependency injection</span>,{' '}
+              <span className="text-white">DTO validation</span>,{' '}
+              <span className="text-white">REST APIs</span>, route and bus management, tracking
+              history endpoints, and clean, scalable backend design patterns — the same
+              architectural choices you'd see in a production service.
+            </p>
+            <p>
+              My research explores deep learning for medical imaging, computer vision and
+              simulation through OpenGL — and as an{' '}
+              <span className="text-white">AI automation builder</span> I design end-to-end
               workflows in <span className="text-white">n8n</span> that connect LLMs, APIs and
-              SaaS tools to automate repetitive tasks, scrape and process data, and orchestrate
-              multi-step agentic pipelines. I love turning brittle manual processes into reliable,
-              self-running systems.
+              SaaS tools to automate repetitive tasks and orchestrate multi-step agentic
+              pipelines.
             </p>
             <p>
               I'm also a competitive problem solver with a strong handle on{' '}
@@ -92,9 +104,9 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="lg:col-span-5 space-y-4"
         >
-          <Card k="Focus" v="MERN Stack · AI · CV · ML" />
-          <Card k="Currently" v="Researching Transformers for medical imaging (Breast Cancer Histopathology) & XAI for visualization" />
-          <Card k="Building" v="FABROMS · Roamad Travels BD" />
+          <Card k="Focus" v="MERN Stack · NestJS · PostgreSQL" />
+          <Card k="Currently" v="Building a Real-Time Bus Tracking System with NestJS, Prisma & PostgreSQL" />
+          <Card k="Researching" v="Transformers for medical imaging (Breast Cancer Histopathology) & XAI for visualization" />
           <Card k="University" v="Patuakhali Science & Technology University" />
         </motion.div>
       </div>

@@ -351,11 +351,13 @@ export default function Hero() {
               color: mutedText,
             }}
           >
-            A MERN Stack Developer and researcher in{' '}
-            <strong style={{ color: strongText, fontWeight: 600 }}>AI</strong>,{' '}
-            <strong style={{ color: strongText, fontWeight: 600 }}>Computer Vision</strong> and{' '}
-            <strong style={{ color: strongText, fontWeight: 600 }}>Machine Learning</strong>. I ship
-            premium full-stack products and publish research at PSTU.
+            A <strong style={{ color: strongText, fontWeight: 600 }}>Full-Stack MERN Developer</strong>{' '}
+            building scalable web applications with React, Node.js, Express and MongoDB — while
+            expanding expertise in{' '}
+            <strong style={{ color: strongText, fontWeight: 600 }}>NestJS</strong>,{' '}
+            <strong style={{ color: strongText, fontWeight: 600 }}>PostgreSQL</strong>,{' '}
+            <strong style={{ color: strongText, fontWeight: 600 }}>Prisma ORM</strong> and modern
+            backend architecture.
           </motion.p>
 
           <motion.div
@@ -818,11 +820,11 @@ function CodeEditor({ activeLine, typingLoopLines, isDark }) {
               <span>
                 <span style={{ color: theme.key }}>{'  focus'}</span>
                 <span style={{ color: theme.punct }}>: </span>
-                <span style={{ color: theme.array }}>{`['AI'`}</span>
+                <span style={{ color: theme.array }}>{`['MERN'`}</span>
                 <span style={{ color: theme.punct }}>, </span>
-                <span style={{ color: theme.array }}>{`'Computer Vision'`}</span>
+                <span style={{ color: theme.array }}>{`'NestJS'`}</span>
                 <span style={{ color: theme.punct }}>, </span>
-                <span style={{ color: theme.array }}>{`'Machine Learning']`}</span>
+                <span style={{ color: theme.array }}>{`'PostgreSQL']`}</span>
                 <span style={{ color: theme.punct }}>,</span>
               </span>
             } />
@@ -890,7 +892,7 @@ function CodeEditor({ activeLine, typingLoopLines, isDark }) {
         >
           {[
             { icon: '⌬', label: 'MERN Stack Developer' },
-            { icon: '◎', label: 'AI & ML Researcher' },
+            { icon: '◎', label: 'NestJS & PostgreSQL' },
             { icon: '◈', label: 'Computer Vision Enthusiast' },
             { icon: '◇', label: 'Open Source Contributor' },
           ].map(({ icon, label }) => (

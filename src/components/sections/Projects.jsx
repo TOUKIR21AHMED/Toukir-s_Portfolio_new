@@ -61,6 +61,13 @@ export default function Projects() {
             <div className="p-5 sm:p-6">
               <p className="text-[15px] text-slate-300 leading-relaxed">{p.description}</p>
 
+              {p.status && (
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-glow" />
+                  {p.status}
+                </div>
+              )}
+
               <ul className="mt-4 space-y-1.5 text-sm text-slate-400">
                 {p.highlights.map((h) => (
                   <li key={h} className="flex gap-2">

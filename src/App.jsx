@@ -7,6 +7,7 @@ import About from './components/sections/About.jsx'
 import Achievements from './components/sections/Achievements.jsx'
 import Contact from './components/sections/Contact.jsx'
 import Experience from './components/sections/Experience.jsx'
+import Exploring from './components/sections/Exploring.jsx'
 import Hero from './components/sections/Hero.jsx'
 import Leadership from './components/sections/Leadership.jsx'
 import Projects from './components/sections/Projects.jsx'
@@ -15,9 +16,9 @@ import Skills from './components/sections/Skills.jsx'
 import BackgroundFX from './components/ui/BackgroundFX.jsx'
 
 const SITE_URL = 'https://toukirahmed.dev'
-const TITLE = 'Md. Toukir Ahmed — MERN Stack Developer | AI & Computer Vision Researcher'
+const TITLE = 'Md. Toukir Ahmed — MERN Stack & NestJS Backend Developer from Bangladesh'
 const DESCRIPTION =
-  'Portfolio of Md. Toukir Ahmed — MERN Stack Developer, Hackathon Champion, and researcher in AI, Computer Vision and Machine Learning.'
+  'Portfolio of Md. Toukir Ahmed — MERN Stack Developer from Bangladesh building scalable full-stack products with React, Node.js, Express, MongoDB, NestJS, PostgreSQL and Prisma ORM. Hackathon Champion and researcher in AI and Computer Vision.'
 
 export default function App() {
   const [ready, setReady] = useState(false)
@@ -60,6 +61,7 @@ export default function App() {
         <Hero />
         <About />
         <Skills />
+        <Exploring />
         <Experience />
         <Achievements />
         <Projects />

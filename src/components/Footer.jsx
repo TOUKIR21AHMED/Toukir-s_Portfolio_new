@@ -37,13 +37,14 @@ export default function Footer() {
               <div className="leading-tight">
                 <p className="text-base font-semibold text-white">Md. Toukir Ahmed</p>
                 <p className="text-xs uppercase tracking-widest text-slate-400">
-                  MERN · AI · Automation · ML
+                  MERN · NestJS · PostgreSQL
                 </p>
               </div>
             </div>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Building premium web experiences with the MERN stack and researching the
-              frontiers of AI, Computer Vision and Machine Learning.
+              Building premium web experiences with the MERN stack and growing into modern
+              backend engineering with NestJS, PostgreSQL and Prisma — through real projects,
+              not just tutorials.
             </p>
           </div>
 
@@ -54,6 +55,7 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-y-2 text-sm text-slate-400">
               <li><a href="#about" className="hover:text-white">About</a></li>
               <li><a href="#skills" className="hover:text-white">Skills</a></li>
+              <li><a href="#exploring" className="hover:text-white">Exploring</a></li>
               <li><a href="#experience" className="hover:text-white">Experience</a></li>
               <li><a href="#achievements" className="hover:text-white">Achievements</a></li>
               <li><a href="#projects" className="hover:text-white">Projects</a></li>
